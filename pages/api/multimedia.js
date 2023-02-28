@@ -20,7 +20,6 @@ const saveImage = ({ body, files, query }, res) => {
                 if (err) {
                     console.error(`Error al guardar el fichero: ${err}`)
                 } else {
-                    console.log(res)
                     res.status(200).json({
                         message: 'Archivo subido correctamente.'
                     });
@@ -34,6 +33,7 @@ const saveImage = ({ body, files, query }, res) => {
         });
     }
 }
+
 
 export const config = {
     api: {

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Button, Header, Form, Image, Modal } from 'semantic-ui-react';
+import { Button, Header, Form, Image, Modal, Divider, Icon } from 'semantic-ui-react';
 import { CKEditor } from 'ckeditor4-react';
 import axios from 'axios';
+import moment from 'moment/moment';
 const { v4: uuidv4 } = require('uuid');
 
 const BlogModal = () => {
@@ -11,7 +12,24 @@ const BlogModal = () => {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
     const [multimedia, setMultimedia] = useState('');
     const [filename, setFilename] = useState();
+    const [multipleFiles, setMultipleFiles] = useState();
     const [loading, setLoading] = useState(false);
+
+
+    const [blocks,setBlocks] = useState([]);
+
+    const createBlock = (ev) => {
+        setBlocks([
+            ...blocks,
+            {
+                id: uuidv4(),
+                titular: ev.title,
+                datePublication: moment(),
+                content: ev.textArea,
+                gallery: ev.multipleFiles
+            }
+        ])
+    };
 
     const onSubmit = async (info) => {
         const extension = filename ? filename?.split('.').pop() : '';
@@ -24,9 +42,15 @@ const BlogModal = () => {
                 id: id
             });
             const data = new FormData();
-            if (multimedia) {
-                data.append('file', multimedia);
-                await axios.post('/api/multimedia', data, {
+            if (multimedia && multipleFiles) {
+                console.log(multipleFiles.length)
+                let account = 0;
+
+                for (const file of multipleFiles) {
+                    data.append('file', file);
+                }
+
+                await axios.post('/api/multiplemedia', data, {
                     params: {
                         id: id,
                         folder: 'services'
@@ -44,7 +68,7 @@ const BlogModal = () => {
             setOpen(false);
         }
     };
-
+    console.log(blocks)
     return (
         <Modal
             onClose={() => setOpen(false)}
@@ -55,8 +79,8 @@ const BlogModal = () => {
             <Modal.Header>Crear Entrada del Blog</Modal.Header>
             <Modal.Content image>
                 <Modal.Description>
-                    <Header></Header>
                     <Form onSubmit={handleSubmit(onSubmit)}>
+                        <Header>1. CREACIÓN DE CABECERA PRINCIPAL</Header>
                         <div style={{ marginBottom: '2rem' }}>
                             <select {...register("language")}>
                                 <option value="es">Español</option>
@@ -77,7 +101,18 @@ const BlogModal = () => {
                             onChange={ev => {
                                 setFilename(ev.target.files[0].name);
                                 setMultimedia(ev.target.files[0]);
-                            }} type="file" name="mediaService" />
+                                setMultipleFiles(ev.target.files)
+                            }} type="file" name="mediaService" multiple />
+                        <Divider />
+
+                        <Header>2. CREACIÓN DE BLOQUES</Header>
+                        {
+                            blocks.map((entry) => <p>{entry.id}</p>)
+                        }
+                        <BlockCreator createBlock={createBlock}/>
+                        
+                        <Button onClick={() => createBlock()}><Icon name="plus" />Crear nuevo bloque</Button>
+                        <Divider />
                         <input
                             type='submit'
                         />
@@ -89,4 +124,40 @@ const BlogModal = () => {
     )
 };
 
+const BlockCreator = ({ createBlock }) => {
+    const [textArea, setTextArea] = useState('');
+    const [multimedia, setMultimedia] = useState('');
+    const [filename, setFilename] = useState();
+    const [multipleFiles, setMultipleFiles] = useState();
+    const [title,setTitle] = useState();
+
+    return (
+        <div className='block-creator'>
+            <input value={title} onChange={(ev) => setTitle(ev.target.value)} style={{ marginBottom: '1rem' }} placeholder='Titulo' />
+            <CKEditor
+                    data={textArea}
+                    onChange={evt => setTextArea(evt.editor.getData())}
+                    style={{
+                        marginBottom: '1rem'
+                    }}
+                    />
+                    <input style={{ marginBottom: '1rem' }} placeholder='Justtip' />
+                    <input
+                        style={{ marginBottom: '1rem' }}
+                        onChange={ev => {
+                            setFilename(ev.target.files[0].name);
+                        setMultimedia(ev.target.files[0]);
+                        setMultipleFiles(ev.target.files)
+                    }} type="file" name="mediaService" multiple />
+                    <Button onClick={(ev) => {
+                        ev.preventDefault();
+                        ev.stopPropagation();
+                        createBlock({
+                            textArea, multipleFiles, title
+                        })
+                    }}>CREAR</Button>
+        </div>
+
+    )
+}
 export default BlogModal;
