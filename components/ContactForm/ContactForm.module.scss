@@ -1,0 +1,27 @@
+.contact-form {
+    padding-top: 80px;
+    padding-bottom: 70px;
+    background-color: #CC555F;
+    &__form {
+        display: flex !important;
+        justify-content: center !important;
+    }
+    &__btnsubmit {
+        background-color: transparent !important;
+        border: 1px solid  #5569CC !important;
+        font-weight: bolder !important;
+        color:  #5569CC !important;
+    }
+
+    h2 {
+        color: white !important;
+    }
+
+    p {
+        color: white;
+    }
+}
+
+.icon-contacto {
+    width: 280px;
+}

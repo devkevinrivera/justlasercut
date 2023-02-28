@@ -1,0 +1,15 @@
+.creation-tag-modal {
+	&__container-values {
+		display: flex;
+	}
+	&__field {
+		width: 50%;
+		padding: .5rem;
+		display: flex;
+		flex-direction: column;
+	}
+	&__container-button {
+		display: flex;
+		justify-content: flex-end;
+	}
+}

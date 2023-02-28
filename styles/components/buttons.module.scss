@@ -1,0 +1,25 @@
+.button-main {
+    border: 1px solid #CC555F !important;
+    background-color: #CC555F !important;
+    border-radius: 4px !important;
+    color: #FFFFFF !important;
+    
+    &:hover {
+        background-color: #CC555F !important;
+        color: white !important;
+        transition: background-color 1s;
+    }
+}
+
+.button-send {
+    border: 1px solid white !important;
+    background-color: white !important;
+    border-radius: 4px !important;
+    color: #CC555F !important;
+    
+    &:hover {
+        background-color: white !important;
+        color: #CC555F !important;
+        transition: background-color 1s;
+    }
+}

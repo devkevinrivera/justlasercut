@@ -1,0 +1,12 @@
+@mixin upBreakpoint($currentBkName) {
+  @media screen and (min-width: $currentBkName) {
+    @content;
+  }
+}
+
+@mixin downBreakpoint($currentBkName) {
+  @media screen and (max-width: $currentBkName) {
+    @content;
+  }
+}
+

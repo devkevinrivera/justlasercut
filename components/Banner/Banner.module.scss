@@ -1,0 +1,79 @@
+.banner {
+    background-image: url('https://archicercle.com/wp-content/uploads/2020/03/background-contacto-archicercle.png');
+    height: 450px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 0px 20px 0px;
+    @include downBreakpoint($breakpoint-up-md) {
+        padding: 0px !important;
+        height: 70vh;
+    }
+    &__container {
+        background-color: white ;
+        height: 100%;
+    }
+    &__grid {
+        height: 100%;
+    }
+    &__main {
+        width: 100%;
+        height: 20vh;
+    }
+    &__manual {
+        height: 100%;
+        background-color: #FFFFFF ;
+        display: flex !important;
+        padding-left: 3rem !important;
+        font-size: 14px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: center;
+        @include downBreakpoint($breakpoint-up-md) {
+            padding: 40px 0px !important;
+            height: 50%;
+        }
+        ul {
+            margin-top: 2.5rem;
+            list-style: none;
+            padding-left: 0;
+            li {
+                a {
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+    &__start-shop {
+        background-color: #CC555F;
+        display: flex !important;
+        align-items: center !important;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        @include downBreakpoint($breakpoint-up-md) {
+            height: 50%;
+        }
+        
+        img {
+            width: 124px;
+            height: 124px;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .upload-box {
+            border-radius: 9px 9px 9px 9px !important;
+            padding: 40px 2rem !important ;
+        }
+
+        div {
+            display: flex !important;
+            flex-direction: column !important;
+            p {
+                font-weight: 600;
+                color: white;
+                text-align: center;
+            }
+        }
+    }
+}

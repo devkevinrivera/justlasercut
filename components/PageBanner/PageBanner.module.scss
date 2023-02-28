@@ -1,0 +1,13 @@
+.pagebanner {
+    height: 154px;
+    background: url('http://localhost:3000/materials.png');
+
+    .container {
+        height: 100%;
+        display: flex !important;
+        align-items: center !important;
+    }
+    &__titlepage {
+      font-size: 22px !important;
+    }
+}

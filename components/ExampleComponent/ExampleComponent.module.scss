@@ -1,0 +1,35 @@
+$background: 'http://172.26.0.114:8080/farhos/VAADIN/themes/farhos/fondo.jpg';
+
+.login {
+  background-image: url($background);
+  min-height: 100vh;
+  height: 100vh;
+
+  &__grid {
+    height: 100%;
+  }
+  &__row {
+    height: 100%;
+  }
+  &__content {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 100% !important;
+  }
+}
+
+.log-in-container {
+  padding: 85px 50px !important;
+  background-color: rgba(0, 0, 0, 0.55);
+  width: 40vw;
+  min-height: 10vh;
+  position: relative;
+  &__title {
+    color: white !important;
+  }
+  &__submit {
+    color: white !important;
+    background-color: #4099d6 !important;
+  }
+}

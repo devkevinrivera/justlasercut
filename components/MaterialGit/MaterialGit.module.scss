@@ -1,0 +1,35 @@
+.material-git {
+    min-height: 100vh;
+
+    @include downBreakpoint($breakpoint-up-sm) {
+        justify-content: space-between;
+    }
+
+    &__list {
+        padding-top: 20px !important;
+        display: flex !important;
+        gap: .50rem;
+    }
+}
+
+.help-card {
+    box-shadow: 2px 4px 7px rgba(152, 152, 152, 0.25);
+    border-radius: 4px !important;
+    border: 1px solid #f1f2f3;
+    
+    &__bg {
+        background-color: #CC555F;
+        color: white;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        font-weight: 600 !important;
+    }
+    &__button {
+        background-color: transparent !important;
+        border: 1px solid #5569CC !important;
+        box-shadow: 0px 1px 4px rgba(151, 151, 151, 0.25) !important;
+        border-radius: 4px !important;
+        color: #000 !important;
+        font-weight: bolder !important;
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "title": {
+        "es": "Ecocarte Chocolate",
+        "en": "Ecocarte Chocolate"
+    },
+    "image": "https://i.picsum.photos/id/825/200/300.jpg?hmac=02AaqBOvx8gwrGt7a3HWzJHnZXrMzYoXbAYwjJWH40E",
+    "materialCategory": "Carton",
+    "thickness": [
+        5,
+        10,
+        20
+    ],
+    "surfacePainting": [
+        1,
+        2,
+        0
+    ],
+    "totalStock": 55,
+    "plateSize": [
+        {
+            "width": 600,
+            "height": 1200
+        }
+    ],
+    "prices": {
+        "priceMinuteLargeMachine": 0.95,
+        "priceMinuteSmallMachine": 0.75,
+        "largeMinimumPrice": 45,
+        "smallMinimumPrice": 40,
+        "priceM2backing": 5,
+        "priceM2painting": 60,
+        "minimumPricePaint": 10
+    },
+    "cutConfiguration": {
+        "insideCut": {
+            "speed": 60,
+            "power": 40
+        },
+        "exteriorCut": {
+            "speed": 60,
+            "power": 40
+        },
+        "lowEngraving": {
+            "speed": 100,
+            "power": 12
+        },
+        "mediumEngraving": {
+            "speed": 100,
+            "power": 14
+        },
+        "hightEngraving": {
+            "speed": 100,
+            "power": 15
+        },
+        "engravingFilledHightResolution": {
+            "speed": 100,
+            "power": 14,
+            "factor": 0.15
+        },
+        "engravingFilledMediumResolution": {
+            "speed": 100,
+            "power": 14,
+            "factor": 0.15
+        },
+        "engravingFilledLowResolution": {
+            "speed": 100,
+            "power": 14,
+            "factor": 0.15
+        }
+    }
+}

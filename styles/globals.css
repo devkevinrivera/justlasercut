@@ -1,0 +1,42 @@
+@import 'semantic-ui-css/semantic.min.css';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.mb-0 { 
+  margin-bottom: 0px !important;
+}
+
+.mr-5 { 
+  margin-right: 5px !important;
+}
+
+.row-item { 
+  display: flex;
+  width: 100%;
+}
+.row-item div { width: 90%}
+.row-item p { width: 10%}
+
+.box-upload {
+  width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    border-style: dashed;
+}

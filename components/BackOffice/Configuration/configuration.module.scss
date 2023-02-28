@@ -1,0 +1,95 @@
+.backoffice-configuration {
+    padding: 2.5rem 2rem !important;
+}
+
+.box-language {
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.manual-modal-edit {
+    padding-bottom: 20px !important;
+    &__textarea {
+        height: 90px !important;
+    }
+    &__buttons {
+        display: flex;
+        .primary {
+            padding: 5px;
+            width: 50%;
+        }
+        .secondary {
+            padding: 5px;
+            width: 50%;
+        }
+    }
+    input {
+        margin-bottom: 10px !important;
+    }
+}
+
+
+.manual-modal-add {
+    padding-bottom: 20px !important;
+    &__textarea {
+        height: 90px !important;
+    }
+    &__buttons {
+        display: flex;
+        .primary {
+            padding: 5px;
+            width: 50%;
+        }
+        .secondary {
+            padding: 5px;
+            width: 50%;
+        }
+    }
+    input {
+        margin-bottom: 10px !important;
+    }
+}
+
+.languages {
+    display: flex;
+    margin-right: 15px;
+    &__container {
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+    }
+    &__active {
+        background-color: #5DADE2;
+    }
+    &__flag{
+        width: 40px;
+    }
+}
+
+.table-general {
+    .miniature-image {
+        width: 70px !important;
+        height: 40px;
+    }
+}
+
+.icon-action {
+    cursor: pointer !important;
+}
+
+.boxed {
+    max-height: 75vh;
+    overflow-y: scroll;
+}
+.table-boxed {
+    max-height: 5rem;
+    overflow-y: hidden;
+}
+
+.feedback-modal {
+    &__name {
+        margin-bottom: 1rem !important;
+    }
+}

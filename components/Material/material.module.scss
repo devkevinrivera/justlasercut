@@ -1,0 +1,26 @@
+.material {
+    border: 1px solid #f1f2f3;
+    border-radius: 4px;
+    box-shadow: 2px 4px 7px rgba(0, 0, 0, 0.1);
+    padding: 0px !important;
+    margin-bottom: .75rem;
+
+    .grid {
+        margin: 0 !important;
+        height: 100%;
+    }
+    &__title {
+        height: 10%;
+    }
+    &__image {
+        padding: 0;
+        padding-bottom: 0px !important;
+        .column {
+
+            padding: 0px !important;
+            .image {
+                height: 100%;
+            }
+        }
+    }
+}

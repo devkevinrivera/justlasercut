@@ -1,0 +1,26 @@
+Justlasercut
+
+Google MongoDB:
+url:https://cloud.mongodb.com/v2/6172862af2d0a97a43e0f70c#metrics/replicaSet/6172870090501a7568cf60c9/explorer/myFirstDatabase/customers/find
+
+
+OAuth Google:
+url: https://console.cloud.google.com/apis/credentials?project=justlasercut
+id: 609436379660-fd9dl73hpi615bd21jhl40b846bkvale.apps.googleusercontent.com
+secret client: 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
+
+Oauth Facebook:
+
+url: https://developers.facebook.com/apps/198061489043891/settings/basic/
+id: 198061489043891
+secret: 
+
+token github:
+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
+
+ENV: 
+
+STAGGING: 
+
+USUARIO: 76868982
+PASSWORD: 23324123Ff*Kevin

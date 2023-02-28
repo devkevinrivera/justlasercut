@@ -1,0 +1,21 @@
+.reviews {
+    background-color: #D8D8D8;
+    padding-top: 80px;
+    padding-bottom: 70px;
+    @include downBreakpoint($breakpoint-up-md) {
+        padding: 70px 12px;
+    }
+    &__list {
+        display: flex !important;
+        justify-content: space-around !important;
+    }
+}
+
+.review {
+    background-color: white ;
+    padding: 1.5rem 8px;
+    margin-bottom: 20px !important;
+    @include downBreakpoint($breakpoint-up-md) {
+        margin-bottom: 20px !important;
+    }
+}

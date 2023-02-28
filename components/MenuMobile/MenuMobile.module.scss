@@ -1,0 +1,41 @@
+#__next {
+  @include downBreakpoint($breakpoint-up-md) {
+    position: relative;
+  }
+}
+.menu-mobile-hide {
+  right: -80vw !important;
+  transition: right 1s;
+  transition-timing-function: ease-out;
+}
+body {
+  overflow-x: hidden;
+}
+.menu-mobile {
+  position: fixed;
+  top: 0px;
+  background-color: white;
+  width: 80%;
+  height: 102vh;
+  z-index: 120;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 40px;
+  transition: right 1s;
+  transition-timing-function: ease-out;
+  -webkit-box-shadow: -2px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -2px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -2px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .menu {
+    width: 100% !important;
+  }
+}
+
+.mobile-logo {
+  width: 70%;
+}

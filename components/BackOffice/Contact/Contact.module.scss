@@ -1,0 +1,18 @@
+.backoffice-contact {
+    padding-top: 4rem !important;
+
+    &__messages-table {
+        height: 80vh;
+        overflow: scroll;
+    }
+}
+
+.message-modal {
+    &__header {
+        display: flex !important;
+        justify-content: space-between !important;
+        i {
+            margin-right: 30px;
+        }
+    }
+}

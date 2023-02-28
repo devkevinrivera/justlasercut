@@ -1,0 +1,29 @@
+.machines-container {
+	padding: 40px 0px !important;
+}
+
+.modal-machine {
+	&__actions {
+		display: flex;
+		justify-content: flex-end;
+		padding: 1rem 0rem 0rem 0rem;
+	}
+
+	&__sizes {
+		display: flex !important;
+
+		.field {
+			padding: .7rem;
+			width: 50%;
+			input {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.button-modal-icon {
+	i {
+		margin: 0px !important;
+	}
+}

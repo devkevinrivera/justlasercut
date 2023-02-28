@@ -1,0 +1,19 @@
+.service {
+    padding-top: 80px;
+    padding-bottom: 70px;
+
+    &__title {
+        margin-bottom: 2rem !important;
+        h2 {
+            font-weight: bolder;
+        }
+    }
+    &__item {
+        margin-bottom: 1rem !important;
+    }
+}
+
+.service-box {
+    max-height: 70vh;
+    overflow-y: scroll;
+}

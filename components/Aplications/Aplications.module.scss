@@ -1,0 +1,20 @@
+.aplications {
+    display: flex !important;
+    justify-content: space-between !important;
+    padding-top: 80px;
+    padding-bottom: 70px;
+    &__item {
+        background-color: #CC555F;
+        border-radius: 4px;
+        margin-bottom: 1.4rem;
+        p {
+            color: white;
+            font-weight: bold !important;
+        }
+    }
+
+    &__rows {
+        display: flex;
+        justify-content: space-between;
+    }
+}

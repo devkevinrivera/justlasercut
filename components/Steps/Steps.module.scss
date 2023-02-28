@@ -1,0 +1,37 @@
+.steps-just {
+    padding-top: 80px;
+    padding-bottom: 70px;
+    @include downBreakpoint($breakpoint-up-md) {
+        padding-top: 70px !important;
+        padding-bottom: 40px;
+        &__header {
+            h2 {
+                margin-left: 12px !important;
+                margin-bottom: 0px !important;
+            }
+        }
+    }
+}
+
+.step-just {
+    @include downBreakpoint($breakpoint-up-md) {
+        margin-bottom: 18px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    };
+    &__container-items {
+        display: flex !important;
+        justify-content: space-between !important;
+        @include downBreakpoint($breakpoint-up-lg) {
+            justify-content: flex-start !important;
+        }
+    }
+    h4 {
+        margin-bottom: 0px !important;
+    }
+    p {
+        margin-top: 1.75rem;
+        font-weight: 600;
+    }
+}

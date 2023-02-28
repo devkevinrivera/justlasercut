@@ -1,0 +1,13 @@
+.button-top {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex !important;
+    text-align: center;
+    justify-content: center !important;
+    background-color: #CC555F !important;
+    i {
+        color: white;
+        padding-right: 0px !important;
+    }
+}
