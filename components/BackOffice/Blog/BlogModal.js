@@ -19,6 +19,10 @@ const BlogModal = () => {
     const [blocks,setBlocks] = useState([]);
 
     const createBlock = (ev) => {
+        const listFilesBlock = []
+        for (const file of ev.multipleFiles) {
+            listFilesBlock.push(file.name)
+        };
         setBlocks([
             ...blocks,
             {
@@ -26,11 +30,11 @@ const BlogModal = () => {
                 titular: ev.title,
                 datePublication: moment(),
                 content: ev.textArea,
-                gallery: ev.multipleFiles
+                gallery: listFilesBlock,
+                files: ev.multipleFiles
             }
         ])
     };
-
     const onSubmit = async (info) => {
         const extension = filename ? filename?.split('.').pop() : '';
         const id = uuidv4();
@@ -41,9 +45,28 @@ const BlogModal = () => {
                 image: `${id}.${extension}`,
                 id: id
             });
+            const requestBlocks = await axios.post('/api/blog', {
+                blocks: 'EPS',
+                data: blocks,
+                id: id
+            });
+            const dataBlocks = new FormData();
+            if (blocks) {
+                for (const bloque of blocks) {
+                    for (const file of bloque.files) {
+                        dataBlocks.append('file', file);
+                    }
+                }
+
+                await axios.post('/api/blogupdateblocks', dataBlocks, {
+                    params: {
+                        id: id,
+                        folder: 'services'
+                    }
+                });
+            }
             const data = new FormData();
             if (multimedia && multipleFiles) {
-                console.log(multipleFiles.length)
                 let account = 0;
 
                 for (const file of multipleFiles) {
@@ -57,6 +80,8 @@ const BlogModal = () => {
                     }
                 });
             }
+            //Guardar bloques.
+
             reset();
             setTextArea('');
             setLoading(false);
@@ -99,7 +124,7 @@ const BlogModal = () => {
                         <input
                             style={{ marginBottom: '1rem' }}
                             onChange={ev => {
-                                setFilename(ev.target.files[0].name);
+                                setFilename(ev.target.files[0]?.name);
                                 setMultimedia(ev.target.files[0]);
                                 setMultipleFiles(ev.target.files)
                             }} type="file" name="mediaService" multiple />
@@ -107,11 +132,10 @@ const BlogModal = () => {
 
                         <Header>2. CREACIÓN DE BLOQUES</Header>
                         {
-                            blocks.map((entry) => <p>{entry.id}</p>)
+                            blocks.map((entry,key) => key > 0 && (<p>{key+1} - {entry.titulo}</p>))
                         }
                         <BlockCreator createBlock={createBlock}/>
                         
-                        <Button onClick={() => createBlock()}><Icon name="plus" />Crear nuevo bloque</Button>
                         <Divider />
                         <input
                             type='submit'
@@ -126,8 +150,6 @@ const BlogModal = () => {
 
 const BlockCreator = ({ createBlock }) => {
     const [textArea, setTextArea] = useState('');
-    const [multimedia, setMultimedia] = useState('');
-    const [filename, setFilename] = useState();
     const [multipleFiles, setMultipleFiles] = useState();
     const [title,setTitle] = useState();
 
@@ -145,9 +167,7 @@ const BlockCreator = ({ createBlock }) => {
                     <input
                         style={{ marginBottom: '1rem' }}
                         onChange={ev => {
-                            setFilename(ev.target.files[0].name);
-                        setMultimedia(ev.target.files[0]);
-                        setMultipleFiles(ev.target.files)
+                            setMultipleFiles(ev.target.files)
                     }} type="file" name="mediaService" multiple />
                     <Button onClick={(ev) => {
                         ev.preventDefault();

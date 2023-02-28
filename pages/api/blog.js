@@ -5,7 +5,13 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default (req, res) => {
     if (req.method === 'POST') {
-        createEntryBlog(req, res)
+        console.log(req.body)
+        if(!req.body.data) {
+            createEntryBlog(req, res)
+        } else {
+            updateBlocksBlog(req,res)
+        }
+        
     };
     if (req.method === 'GET') {
         GetEntryBlog(req, res)
@@ -18,10 +24,33 @@ export default (req, res) => {
     };
 }
 
-// Titulo
-// Subtitulo
-// Contenido
-// Image
+const updateBlocksBlog = ({ body, query }, res) => {
+    const editBlog = async () => {
+        console.log('ENTRA POR AQUUIIIII')
+        try {
+            const objectModified = {
+                $set: {
+                    blocks: body.data,
+                }
+            };
+            const filter = { id: body.id };
+            const session = await MongoClient.connect(url);
+            const db = session.db();
+            const collection = db.collection("Blog");
+            await collection.updateOne(filter, objectModified);
+
+            session.close();
+            res.status(200).json({
+                message: 'Se a actualizado correctamente el bloque.'
+            });
+        } catch (err) {
+            res.status(500).json({
+                message: `Error al actualizar el manual.`
+            });
+        }
+    };
+    editBlog();
+};
 
 const DeleteEntryBlog = ({ body, query }, res) => {
     const { id } = body;
