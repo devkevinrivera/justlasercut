@@ -3,6 +3,7 @@ import axios from "axios";
 import { Container, Grid, Header, Image, Divider } from "semantic-ui-react";
 import parse from 'html-react-parser';
 import { Dimmer, Loader, Segment } from 'semantic-ui-react'
+import HtmlParser from 'react-html-parser';
 
 const articulo = ({ blog }) => {
     const [article, setArticle] = useState();
@@ -12,7 +13,6 @@ const articulo = ({ blog }) => {
         const handler = async () => {
             try {
                 const { data } = await axios(`/api/blog`);
-                console.log(data)
                 data?.blog?.map(entry => {
                     if (entry.id === article.id) {
                         setArticle(entry)
@@ -75,20 +75,17 @@ const articulo = ({ blog }) => {
                         <Grid.Row>
                             <Grid.Column computer={16}>
                                 <div className='article__container'>
-                                    <Image src="/background.png" className='article__image' />
-                                    <Image src="/background.png" className='article__image' />
-                                    <Image src="/background.png" className='article__image' />
-                                    <Image src="/background.png" className='article__image' />
-                                    <Image src="/background.png" className='article__image' />
-                                    <Image src="/background.png" className='article__image' />
+                                    {
+                                        article.gallery.map((media) => <Image src={`/blog/${media}`} className='article__image' />)
+                                    }
                                 </div>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>
                 </Container>
-                <BlockArticleContainer />
-                <BlockArticleContainer />
-                <BlockArticleContainer />∫
+                {
+                    article.blocks.map(section => (<BlockArticleContainer data={section} />))
+                }
                 </>
             )
         }
@@ -97,16 +94,16 @@ const articulo = ({ blog }) => {
     );
 };
 
-const BlockArticleContainer = () => {
+const BlockArticleContainer = ({ data }) => {
 
     return (
         <Container className='block-article'>
             <Grid columns={16}>
                 <Grid.Row>
                     <Grid.Column computer={10}>
-                        <Header as='h3'>La UE sospecha que Rusia está detrás de </Header>
+                        <Header as='h3'>{data.titular}</Header>
                         <p className='block-article__parrafo'>
-                            La UE sospecha que Rusia está detrás de las     cuatro fugas detectadas esta semana en los gasoductos del Nord Stream I y Nord Stream II. Algo que será difícil de demostrar y que tanto en la UE como en la OTAN consideran un acto de "sabotaje". De demostrarse, significaría el primer ataque directo de Rusia a infraestructuras europeas en medio de la guerra energética que libran en paralelo Bruselas y Moscú. "Rusia está poniendo la seguridad global en riesgo", advierte el bloque comunitario.
+                           {HtmlParser(data?.content)}
                         </p>
                     </Grid.Column>
                     <Grid.Column computer={6} verticalAlign="middle">
@@ -118,7 +115,10 @@ const BlockArticleContainer = () => {
                 </Grid.Row>
                 <Grid.Row>
                     <Grid.Column computer={16}>
-                        <Image className='block-article__media' src="/background.png" fluid/>
+                        {
+                            data.gallery.map(image => <Image className='block-article__media' src={`/public/${image}`} fluid/>)
+                        }
+                        
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
