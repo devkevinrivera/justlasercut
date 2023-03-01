@@ -52,7 +52,8 @@ function Blog({ blog }) {
                                 ev.preventDefault();
                                 localStorage.setItem('article', JSON.stringify({ id: entry.id }))
                                 router.push('/articulo');
-                            }}   computer={4} tablet={8} mobile={16} className="blog-entry">
+                            }}  
+                            computer={8} tablet={8} mobile={16} className="blog-entry">
                                 <Grid columns={16}>
                                     <Grid.Row>
                                         <Grid.Column computer={16}>

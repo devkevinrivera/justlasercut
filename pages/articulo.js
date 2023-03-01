@@ -86,6 +86,22 @@ const articulo = ({ blog }) => {
                 {
                     article.blocks.map(section => (<BlockArticleContainer data={section} />))
                 }
+                <Container className='redes-block'>
+                    <Grid columns={16}>
+                        <Grid.Row>
+                            <Grid.Column className='redes-block__container' computer={16} >
+                                <p>¿Te ha gustado? Compártelo :)</p>
+                                <div style={{ display: 'flex' }}>
+                                    <Image src="/button_facebook.png" />
+                                    <Image src="/button_instagram.png" />
+                                    <Image src="/button_ilinkedin.png" />
+                                    <Image src="/button_pinterest.png" />
+                                    <Image src="/button_twiter.png" />
+                                </div>
+                            </Grid.Column>
+                        </Grid.Row>
+                    </Grid>
+                </Container>
                 </>
             )
         }
