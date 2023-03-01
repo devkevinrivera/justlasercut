@@ -116,7 +116,7 @@ const BlockArticleContainer = ({ data }) => {
                 <Grid.Row>
                     <Grid.Column computer={16}>
                         {
-                            data.gallery.map(image => <Image className='block-article__media' src={`/public/${image}`} fluid/>)
+                            data.gallery.map(image => <Image className='block-article__media' src={`/${image}`} fluid/>)
                         }
                         
                     </Grid.Column>
