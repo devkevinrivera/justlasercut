@@ -51,7 +51,7 @@ const BlogModal = () => {
                 id: id
             });
             const dataBlocks = new FormData();
-            if (blocks) {
+            if (blocks.length) {
                 for (const bloque of blocks) {
                     for (const file of bloque.files) {
                         dataBlocks.append('file', file);
@@ -66,7 +66,7 @@ const BlogModal = () => {
                 });
             }
             const data = new FormData();
-            if (multimedia && multipleFiles) {
+            if (multimedia || multipleFiles) {
                 let account = 0;
 
                 for (const file of multipleFiles) {

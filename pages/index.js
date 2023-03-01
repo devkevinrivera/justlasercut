@@ -69,8 +69,7 @@ export async function getServerSideProps() {
   const gallery = await axios(`${BASE_URL}/api/technologies`);
   const aplications = await axios(`${BASE_URL}/api/aplications`);
   const promotions = await axios(`${BASE_URL}/api/promotions`);
-  console.log('promotions.data.resources')
-  console.log(promotions.data)
+
   advantagesSend = advantages.data.steps;
   const { data: { list } } = listReviews;
   reviews = list;

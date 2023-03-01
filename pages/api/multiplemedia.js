@@ -20,17 +20,16 @@ const saveImage = async ({ body, files, query }, res) => {
     const extension = files.file[0].path.split('.').pop();
    
     try {
-        let countFile = 0;
         const filesAdd = [];
         for (const file of files.file) {
-            fs.readFile(files.file[0].path, function (err, data) {
-                fs.writeFile(`${BASE_MULTIMEDIA_STORE}/blog/${`${query.id}-${uuidv4()}`}.${extension}`, data, (err) => {
+            const extension = file.path.split('.').pop();
+            fs.readFile(file.path, function (err, data) {
+                fs.writeFile(`${BASE_MULTIMEDIA_STORE}/${`${query.id}-${uuidv4()}`}.${extension}`, data, (err) => {
                     if (err) {
                         console.error(`Error al guardar el fichero: ${err}`)
                     } else {
                         
                         filesAdd.push(`${`${query.id}-${uuidv4()}`}.${extension}`)
-                        countFile++;
                     }
                 })
             });
