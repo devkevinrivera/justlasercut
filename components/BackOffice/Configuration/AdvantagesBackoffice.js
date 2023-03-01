@@ -38,11 +38,11 @@ const AdvantagesBackoffice = () => {
                     <div className="languages">
                         <AddAdvantage language={language} update={setUpdate} render={<Button primary content="+" />} />
                         <div onClick={() => setLanguage('es')} className={`languages__container ${language === 'es' && ('languages__active')}`}>
-                            <Image src={`${BASE_URL}/flag_es.jpg`} alt="flag_spain" className="languages__flag" />
+                            <Image src={`/flag_es.jpg`} alt="flag_spain" className="languages__flag" />
                         </div>
                         <Divider vertical />
                         <div onClick={() => setLanguage('en')} className={`languages__container ${language === 'en' && ('languages__active')}`}>
-                            <Image src={`${BASE_URL}/flag_en.png`} alt="flag_english" className="languages__flag" />
+                            <Image src={`/flag_en.png`} alt="flag_english" className="languages__flag" />
                         </div>
                     </div>
                 </Grid.Column>

@@ -57,13 +57,13 @@ const HeaderJustLaserCut = (props) => {
             key: 'Spanish',
             text: 'Español',
             value: 'es',
-            image: { avatar: true, src: `${BASE_URL}/flag_es.jpg` },
+            image: { avatar: true, src: `/flag_es.jpg` },
         },
         { 
             key: 'English',
             text: 'English',
             value: 'en',
-            image: { avatar: true, src: `${BASE_URL}/flag_en.png` },
+            image: { avatar: true, src: `/flag_en.png` },
         },
     ];
 
