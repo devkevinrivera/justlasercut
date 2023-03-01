@@ -17,18 +17,21 @@ handler.post((req, res) => {
 
 const saveImage = async ({ body, files, query }, res) => {
     const rootDir = path.join(__dirname, '../public/')
-    const extension = files.file[0]?.path.split('.').pop();
+    
     try {
         let countFile = 0;
         const filesAdd = [];
+     
         for (const file of files.file) {
+            const extension = file.path.split('.').pop();
+            const idMedia = uuidv4();
             fs.readFile(file.path, function (err, data) {
-                fs.writeFile(`${BASE_MULTIMEDIA_STORE}/${`${file.name}`}.${extension}`, data, (err) => {
+                fs.writeFile(`${BASE_MULTIMEDIA_STORE}/${`${idMedia}`}.${extension}`, data, (err) => {
                     if (err) {
                         console.error(`Error al guardar el fichero: ${err}`)
                     } else {
                         
-                        filesAdd.push(`${`${file?.name}`}.${extension}`)
+                        filesAdd.push(`${`${idMedia}`}.${extension}`)
                         countFile++;
                     }
                 })
@@ -37,7 +40,7 @@ const saveImage = async ({ body, files, query }, res) => {
         }
         
         res.status(200).json({
-            message: 'Archivo subido correctamente.'
+            message: filesAdd
         });
     } catch (err) {
         console.error(`Error al guardar imagen: ${err}`);

@@ -132,7 +132,7 @@ const BlogModal = () => {
 
                         <Header>2. CREACIÓN DE BLOQUES</Header>
                         {
-                            blocks.map((entry,key) => key > 0 && (<p>{key+1} - {entry.titulo}</p>))
+                            blocks.map((entry,key) => key > 0 && (<p>{key} - {entry.titulo}</p>))
                         }
                         <BlockCreator createBlock={createBlock}/>
                         

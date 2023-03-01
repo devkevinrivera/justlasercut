@@ -76,7 +76,7 @@ const articulo = ({ blog }) => {
                             <Grid.Column computer={16}>
                                 <div className='article__container'>
                                     {
-                                        article.gallery.map((media) => <Image src={`/blog/${media}`} className='article__image' />)
+                                        article.gallery.map((media) => <Image src={`/${media}`} className='article__image' />)
                                     }
                                 </div>
                             </Grid.Column>

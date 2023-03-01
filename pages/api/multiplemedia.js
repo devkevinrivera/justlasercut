@@ -23,13 +23,14 @@ const saveImage = async ({ body, files, query }, res) => {
         const filesAdd = [];
         for (const file of files.file) {
             const extension = file.path.split('.').pop();
+            const idGen = uuidv4();
             fs.readFile(file.path, function (err, data) {
-                fs.writeFile(`${BASE_MULTIMEDIA_STORE}/${`${query.id}-${uuidv4()}`}.${extension}`, data, (err) => {
+                fs.writeFile(`${BASE_MULTIMEDIA_STORE}/${`${query.id}-${idGen}`}.${extension}`, data, (err) => {
                     if (err) {
                         console.error(`Error al guardar el fichero: ${err}`)
                     } else {
                         
-                        filesAdd.push(`${`${query.id}-${uuidv4()}`}.${extension}`)
+                        filesAdd.push(`${`${query.id}-${idGen}`}.${extension}`)
                     }
                 })
             });
