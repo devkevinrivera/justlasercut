@@ -26,7 +26,6 @@ export default (req, res) => {
 
 const updateBlocksBlog = ({ body, query }, res) => {
     const editBlog = async () => {
-        console.log('ENTRA POR AQUUIIIII')
         try {
             const objectModified = {
                 $set: {

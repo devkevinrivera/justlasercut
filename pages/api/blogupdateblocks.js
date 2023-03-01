@@ -26,12 +26,12 @@ const saveImage = async ({ body, files, query }, res) => {
             const extension = file.path.split('.').pop();
             const idMedia = uuidv4();
             fs.readFile(file.path, function (err, data) {
-                fs.writeFile(`${BASE_MULTIMEDIA_STORE}/${`${idMedia}`}.${extension}`, data, (err) => {
+                fs.writeFile(`${BASE_MULTIMEDIA_STORE}/${`${file.name}`}.${extension}`, data, (err) => {
                     if (err) {
                         console.error(`Error al guardar el fichero: ${err}`)
                     } else {
                         
-                        filesAdd.push(`${`${idMedia}`}.${extension}`)
+                        filesAdd.push(`${`${file.name}`}.${extension}`)
                         countFile++;
                     }
                 })
