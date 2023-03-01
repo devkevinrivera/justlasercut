@@ -85,7 +85,7 @@ const ManualTable = ({ language, manualItems, setUpdater }) => {
 
     const deleteStepManual = async (idManual) => {
         try {
-            const request = await axios.delete(`${BASE_URL}api/manual`, {
+            const request = await axios.delete(`${BASE_URL}/api/manual`, {
                 params: {
                     id: idManual
                 }

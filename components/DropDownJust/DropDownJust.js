@@ -59,7 +59,7 @@ const DropDownJust = ({ title, list = [], folder = '' }) => {
                                             <Accordion.Content className="custom-dropdown-content" active={selected === index}>
                                                 <div className="custom-dropdown-content__container">
                                                     <div className="image">
-                                                        <Image src={`${BASE_URL}${option.image}`} alt={option.title} />
+                                                        <Image src={`${BASE_URL}/${option.image}`} alt={option.title} />
                                                     </div>
                                                     <div className="description">
                                                         <p>{parse(option.description)}</p>

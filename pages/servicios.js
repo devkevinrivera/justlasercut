@@ -10,7 +10,7 @@ const languages = {
 }
 
 export async function getServerSideProps(context) {
-  const res = await axios(`${BASE_URL}api/services`, {
+  const res = await axios(`${BASE_URL}/api/services`, {
     params: {
       language: 'all'
     }
