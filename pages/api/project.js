@@ -15,7 +15,7 @@ const handlerUploadFile = async ({ body }, res) => {
     try {
         fs.writeFile('./LaserCutApp/file.txt', fileName, (err) => {
             if (err) throw err;
-            let executablePath = "C:/desarrollo/justlasercut-final/LaserCutApp/bin/Debug/LaserCutApp.exe";
+            let executablePath = "C:/Users/Administrator/Documents/justlasercut/justlasercut/public/LaserCutApp/bin/Debug/LaserCutApp.exe";
 
             child(executablePath, async function (err, data) {
                 console.log('=======================');
@@ -140,10 +140,10 @@ const handlerUploadFile = async ({ body }, res) => {
                     });
 
                     session.close();
-                    const path = `C:/desarrollo/justlasercut-final/LaserCutApp/test/${fileName}`
+                    const path = `C:/Users/Administrator/Documents/justlasercut/justlasercut/LaserCutApp/test/${fileName}`
                     const parsed = dxf.parseString(fs.readFileSync(path, 'utf-8'))
                     const svg = dxf.toSVG(parsed);
-                    fs.writeFile(`C:/desarrollo/justlasercut-final/public/${fileName.replace('.dxf','.svg')}`,svg,'utf-8');
+                    fs.writeFile(`C:/Users/Administrator/Documents/justlasercut/justlasercut/public/${fileName.replace('.dxf','.svg')}`,svg,'utf-8');
                     res.status(200).json({
                         fileName: fileName,
                         id: idItem,

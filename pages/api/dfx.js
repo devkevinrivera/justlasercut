@@ -15,7 +15,7 @@ const saveDxf = ({ body, files, query }, res) => {
     const rootDir = path.join(__dirname, '..')
     try {
         fs.readFile(files.file[0].path, function (err, data) {
-            fs.writeFile(`C:/desarrollo/justlasercut-final/LaserCutApp/test/${query.id}.dxf`, data, (err) => {
+            fs.writeFile(`C:/Users/Administrator/Documents/justlasercut/justlasercut/LaserCutApp/test/${query.id}.dxf`, data, (err) => {
                 if (err) {
                     console.error(`Error al guardar el fichero: ${err}`)
                 } else {
