@@ -55,13 +55,13 @@ const HeaderJustLaserCut = (props) => {
     const friendOptions = [
         {
             key: 'Spanish',
-            text: 'Español',
+            text: '',
             value: 'es',
             image: { avatar: true, src: `/flag_es.jpg` },
         },
         { 
             key: 'English',
-            text: 'English',
+            text: '',
             value: 'en',
             image: { avatar: true, src: `/flag_en.png` },
         },
@@ -85,38 +85,24 @@ const HeaderJustLaserCut = (props) => {
                 <Container>
                     <Grid columns={16}>
                         <Grid.Row className="header-just__static">
-                            <Grid.Column width="4" className="bussiness-contact">
-                                <div className="header-identification-button margin-bottom-1">
-                                    <Icon name="mail outline" size="large" />
-                                    <p>{site?.email}</p>
-                                </div>
-                                <div className="header-identification-button">
-                                    <Icon name="phone" size="large" />
-                                    <p>{site?.phone}</p>
-                                </div>
-                            </Grid.Column>
-                            <Grid.Column mobile={9} tablet={6} computer={7} className="header-just__logo" onClick={() => router.push('/')}>
+                            <Grid.Column mobile={9} tablet={6} computer={5} className="header-just__logo" onClick={() => router.push('/')}>
                                 <img src='/logo.svg' />
                             </Grid.Column>
                             
-                            <Grid.Column computer={5} tablet={10} className="header-just__user-experience-container">
+                            <Grid.Column computer={11} tablet={10} className="header-just__user-experience-container">
                                 <nav className="header-just__user-experience">
+                                    <div className="header-identification-button" onClick={() => {
+                                        window.location.href = 'https://wa.me/34649999853?text=¡Hola! tengo dudas con justlasercut'
+                                    }}>
+                                        <Icon name="phone" size="large" />
+                                        <p>+{site?.phone}</p>
+                                    </div>
                                     <div className="header-identification-button margin-right-1" onClick={() => {
                                         router.push('/contacto');
                                     }}>
                                         <Icon name="envelope outline" size="large" />
                                         <p>{t.contacto}</p>
                                     </div>
-
-                                    {session ? (
-                                        <>
-                                            <Button primary content='Perfil' onClick={() => {
-                                                router.push('/perfil');
-                                            }} />
-                                        </>
-                                    ) : (
-                                        <ModalSession />
-                                    )}
 
                                     <div className="language-selector margin-right-1">
                                         <span>
@@ -130,6 +116,15 @@ const HeaderJustLaserCut = (props) => {
                                             />
                                         </span>
                                     </div>
+                                    {session ? (
+                                        <>
+                                            <Button primary onClick={() => {
+                                                router.push('/perfil');
+                                            }} />
+                                        </>
+                                    ) : (
+                                        <ModalSession />
+                                    )}
                                 </nav>
                             </Grid.Column>
                             <Grid.Column mobile={7} className="header-just__menu-mobile">

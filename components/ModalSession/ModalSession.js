@@ -25,7 +25,6 @@ const ModalSession = () => {
         trigger: (
             <div className="header-identification-button">
                 <Icon name="user circle" size="big" />
-                <p>{t.micuenta}</p>
             </div>
         ),
         size: 'tiny'
