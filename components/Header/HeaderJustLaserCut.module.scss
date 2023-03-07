@@ -67,6 +67,8 @@
 .menu-just {
   padding-top: 0px !important;
   padding-bottom: 0px !important;
+  margin-top: 25px;
+
   &__container {
     justify-content: space-evenly !important;
     align-items: center !important;
@@ -159,4 +161,8 @@
     color: #cc555f;
     font-weight: bold;
   }
+}
+
+.menu-just__container {
+  border: none !important;
 }

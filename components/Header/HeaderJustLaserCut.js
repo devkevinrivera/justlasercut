@@ -147,7 +147,9 @@ const HeaderJustLaserCut = (props) => {
 const MenuJust = () => {
     const { locale } = useRouter();
     const t = languages[locale];
-
+    const router = useRouter()
+    const { pathname, asPath, query } = router
+    console.log('DATA:',pathname.replace('/',''))
     const navigation = [
         {
             title: t.tutoriales,
@@ -180,9 +182,7 @@ const MenuJust = () => {
                 <Menu pointing secondary className="menu-just__container">
                     {
                         navigation.map((page, index) => (
-                            <Link href={page.href} key={index}>
-                                {page.title}
-                            </Link>
+                                <a href={page.href} key={index} className={pathname.replace('/','') == String(page.title).toLowerCase() ? 'menu-active-item' : 'mico'}>{page.title}</a>
                         ))
                     }
 
