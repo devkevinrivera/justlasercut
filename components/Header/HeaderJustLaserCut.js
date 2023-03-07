@@ -101,7 +101,9 @@ const HeaderJustLaserCut = (props) => {
                                         router.push('/contacto');
                                     }}>
                                         <Icon name="envelope outline" size="large" />
-                                        <p>{t.contacto}</p>
+                                        <a className='no-link' href="mailto:hola@justlasercut.com">
+                                            <b>hola@justlasercut.com</b>
+                                        </a>
                                     </div>
 
                                     <div className="language-selector margin-right-1">
@@ -152,6 +154,11 @@ const MenuJust = () => {
     console.log('DATA:',pathname.replace('/',''))
     const navigation = [
         {
+            title: t.calcula,
+            href: "/",
+            index: true
+        },
+        {
             title: t.tutoriales,
             href: "/manual"
         },
@@ -174,7 +181,11 @@ const MenuJust = () => {
         {
             title: t.proyectos,
             href: "/proyectos"
-        }
+        },
+        {
+            title: t.contacto,
+            href: "/contacto"
+        },
     ];
     return (
         <Grid.Row className="menu-just">
@@ -182,7 +193,7 @@ const MenuJust = () => {
                 <Menu pointing secondary className="menu-just__container">
                     {
                         navigation.map((page, index) => (
-                                <a href={page.href} key={index} className={pathname.replace('/','') == String(page.title).toLowerCase() ? 'menu-active-item' : 'mico'}>{page.title}</a>
+                                <a href={page.href} key={index} className={pathname.replace('/','') == String(page.title).toLowerCase() || page.index ? 'menu-active-item' : 'mico'}>{page.title}</a>
                         ))
                     }
 

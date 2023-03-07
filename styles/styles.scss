@@ -510,3 +510,10 @@
 .menu-active-item {
     border-bottom: 2px solid #cc555f;
 }
+
+.no-link {
+    color: #000000;
+    &:hover {
+        color: #000;
+    }
+}
