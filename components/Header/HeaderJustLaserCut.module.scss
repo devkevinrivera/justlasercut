@@ -3,8 +3,12 @@
   padding-top: 2rem;
   margin-bottom: 2.5rem;
   @include downBreakpoint($breakpoint-up-md) {
-    height: 70px;
     margin-bottom: 2.5rem;
+    height: 75px;
+  }
+  @include downBreakpoint($breakpoint-up-sm) {
+    padding-bottom: 1rem;
+    margin-bottom: 0rem;
   }
   &__logo {
     text-align: center;
@@ -68,7 +72,9 @@
   padding-top: 0px !important;
   padding-bottom: 0px !important;
   margin-top: 25px;
-
+  @include downBreakpoint($breakpoint-down-md) {
+    display: none !important;
+  }
   &__container {
     justify-content: space-evenly !important;
     align-items: center !important;

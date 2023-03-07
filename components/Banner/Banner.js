@@ -20,8 +20,6 @@ const baseStyle = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    paddingTop: '6rem',
-    paddingBottom: '6rem',
     borderWidth: 2,
     borderRadius: 2,
     borderColor: '#eeeeee',
