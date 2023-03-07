@@ -9,7 +9,6 @@ import ModalPedidoTecnicalInfo from "./PedidoTecnicalInfo";
 const ModalVerifyPedidos = ({ item , verified }) => {
 	const [open,setOpen] = useState(false);
 	const [link,setLink] = useState('');
-	console.log(item)
 	const { 
 		creationDate , 
 		informacionPedido, 
@@ -33,7 +32,6 @@ const ModalVerifyPedidos = ({ item , verified }) => {
 	 } = informacionEnvio;
 	 
 	 const getPaymentMethod = (paymentSelected) => {
-		 console.log(paymentSelected)
 		if (paymentSelected === 0) {
 			return 'Targeta'
 		}

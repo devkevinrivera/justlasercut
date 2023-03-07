@@ -36,7 +36,6 @@ const deleteResource = (req, res) => {
                 message: 'DeletedSuccesfully'
             })
         } catch (error) {
-            console.log(error)
             res.status(500).json({
                 message: 'DeleteFailed!'
             });
@@ -104,7 +103,6 @@ const createResource = ({ body }, res) => {
                 message: 'CreatedSuccesfully!'
             });
         } catch (err) {
-            console.log(err)
             res.status(500).json({
                 message: 'CreatedFail!'
             });

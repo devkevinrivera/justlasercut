@@ -47,7 +47,6 @@ const ContactForm = () => {
                     filename: filename ? `${id}.${extension}` : '',
                     id: id
                 });
-                console.log(`multimedia ${multimedia}`)
                 if (multimedia) {
                     const media = new FormData();
                     media.append('file', multimedia);
@@ -65,7 +64,6 @@ const ContactForm = () => {
                 }, 5000);
             } catch (err) {
                 setError(true);
-                console.log(`${err}`)
                 setTimeout(() => {
                     setError(false);
                 }, 5000);

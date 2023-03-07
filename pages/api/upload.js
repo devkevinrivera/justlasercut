@@ -14,7 +14,6 @@ handler.post(async (req, res) => {
                 if (err) {
                     console.error(`Error al guardar fichero: ${err}`)
                 } else {
-                    console.log('File uploaded successfully')
                     res.status(200).json({
                         message: 'Todo creado correctamente.'
                     })

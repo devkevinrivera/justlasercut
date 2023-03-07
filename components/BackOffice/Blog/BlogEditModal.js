@@ -14,7 +14,6 @@ const BlogEditModal = ({ entry, setUpdater }) => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        console.log(entry)
         setValue('title', entry.title)
         setValue('subtitle', entry.subtitle)
         setValue('language', entry.language)

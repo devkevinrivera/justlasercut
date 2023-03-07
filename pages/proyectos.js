@@ -183,7 +183,6 @@ const MainApp = ({setUploadView}) => {
     }
 
     useEffect(() => {
-        console.log(cart.items)
         let calculateTotalCart = 0;
 
         cart.items.map((item) => {
@@ -244,7 +243,6 @@ const MainApp = ({setUploadView}) => {
         try {
             localStorage.setItem('cart',JSON.stringify(pedido));
             history.push('/carrito');
-            console.log(res);
         } catch (e) {
             console.error(e)
         }

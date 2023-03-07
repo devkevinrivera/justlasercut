@@ -40,7 +40,6 @@ const ContactForm = ({ t }) => {
                     setSuccess(false);
                 }, 5000);
             } catch (err) {
-                console.log(err)
                 setError(true);
                 setTimeout(() => {
                     setError(false);

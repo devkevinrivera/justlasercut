@@ -8,9 +8,6 @@ function ModalPedidoTecnicalInfo({ pedido }) {
 	const { list , getMaterialList} = useMaterial();
 	const [materialSelected,setMaterialSelected] = useState();
 
-	console.log('Modal pedido Pedido');
-	console.log(list);
-
 	useEffect(() => {
 		getMaterialList();
 	},[]);
@@ -74,7 +71,6 @@ function ModalPedidoTecnicalInfo({ pedido }) {
 					</Grid.Column>
 					<Grid.Column computer={16}>
 						<Divider />
-						{console.log(materialSelected)}
 						<Header>Información de corte del ({materialSelected?.title?.es}):</Header>
 						<Table>
 							<Table.Header>

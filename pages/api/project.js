@@ -18,9 +18,6 @@ const handlerUploadFile = async ({ body }, res) => {
             let executablePath = "C:/Users/Administrator/Documents/justlasercut/justlasercut/public/LaserCutApp/bin/Debug/LaserCutApp.exe";
 
             child(executablePath, async function (err, data) {
-                console.log('=======================');
-                console.log(data);
-                console.log('=======================');
                 const messagesExceptions = ["Insert\r", "\r", "Point\r"];
                 const canPass = ["BOARD", "TYPE", "PLANCHA", "PLANCHA"];
                 const filterMessages = data.split('\n').filter((str) => !messagesExceptions.includes(str))
@@ -35,7 +32,6 @@ const handlerUploadFile = async ({ body }, res) => {
                 const errorList = [];
 
                 filter.map((message, index) => {
-                    console.log('mensaje:',message)
                     if(message.includes('ERR')) {
                         errorList.push(message);
                     };

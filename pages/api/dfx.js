@@ -19,7 +19,6 @@ const saveDxf = ({ body, files, query }, res) => {
                 if (err) {
                     console.error(`Error al guardar el fichero: ${err}`)
                 } else {
-                    console.log(`File upload successfully`);
                     res.status(200).json({
                         message: `${query.id}.dxf`
                     });

@@ -173,7 +173,6 @@ const PlateWeight = ({ rangeval, setRangeval }) => {
             try {
                 const request = await axios('/api/site');
                 const configuration = request?.data?.configurationSite[0];
-                console.log(configuration)
                 setSite(configuration);
             } catch (error) {
                 console.error('Error, al obtener propiedades de la web:',error);

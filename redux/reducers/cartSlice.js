@@ -51,7 +51,6 @@ export const cartSlice = createSlice({
         },
         modifyCopias: (state,action) => {
             state.items = state.items.map( item => {
-                console.log(action.payload.copias)
                 if(item.idProjectItem === action.payload.itemId) {
                     item.copias = parseInt(action.payload.copias);
                 };

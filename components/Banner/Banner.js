@@ -52,8 +52,6 @@ const Banner = ({ info }) => {
     const [bannerInfo, setBannerInfo] = useState();
     const t = languages[locale];
     useEffect(() => {
-        console.log(locale === 'es')
-        console.log(info)
         let titleSelected; 
         if (locale === 'es') {
             titleSelected = info.find(element => element.languageId === 0);
@@ -118,7 +116,6 @@ const Banner = ({ info }) => {
         const startProject = async () => {
             try {
                 if (files) {
-                    console.log(ev.target.files)
                     const data = new FormData();
                     data.append('file', ev.target.files[0]);
                     const uploadMedia = await axios.post(`/api/dfx`, data, {

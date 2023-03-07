@@ -5,8 +5,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
 const Offers = ({ list }) => {
-    console.log('kevinnnn')
-    console.log(list)
     return (
         <Container fluid className="offers">
             <Container >

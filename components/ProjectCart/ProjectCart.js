@@ -428,7 +428,6 @@ const ProjectItem = ({ item }) => {
                                     defaultValue={item.material}
                                     value={productSelected}
                                     onChange={(e,{ value }) => {
-                                        console.log(value)
                                         setProductSelected(value);
                                     }}
                                 />
@@ -449,7 +448,6 @@ const ProjectItem = ({ item }) => {
                                 results={products}
                                 onResultSelect={(ev,x) => {
                                     setProductSelected(x.result.value);
-                                    console.log(x)
                                 }}
                                 resultRenderer={resRender}
                             />

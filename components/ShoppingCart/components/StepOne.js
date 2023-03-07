@@ -19,8 +19,6 @@ export default function StepOne() {
     const t = languages[locale];
     const { data: session } = useSession();
     
-    console.log(session)
-    
     const iniciarSesion = () => {
         setLoading(true);
         signIn('credentials',

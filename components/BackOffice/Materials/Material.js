@@ -121,7 +121,6 @@ const Material = () => {
 						</Table.Row>
 					</Table.Header>
                     <Table.Body>
-                        {console.log(listFiltered)}
                         {
                             listFiltered.map((material) => (
                                 <Table.Row>

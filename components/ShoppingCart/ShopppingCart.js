@@ -14,7 +14,6 @@ export default function ShopppingCart() {
 
   useEffect(() => {
     if(!session) return;
-    console.log
     setActive('Opciones de envío');
   },[session]);
   

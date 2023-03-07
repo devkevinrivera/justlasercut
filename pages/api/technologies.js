@@ -106,7 +106,6 @@ const createTechnology = ({ body }, res) => {
                 message: 'CreatedSuccesfully!'
             });
         } catch (err) {
-            console.log(err)
             res.status(500).json({
                 message: 'CreatedFail!'
             });

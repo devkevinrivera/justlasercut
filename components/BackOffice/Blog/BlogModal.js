@@ -93,7 +93,6 @@ const BlogModal = () => {
             setOpen(false);
         }
     };
-    console.log(blocks)
     return (
         <Modal
             onClose={() => setOpen(false)}

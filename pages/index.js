@@ -36,7 +36,6 @@ function Home(props) {
     }
     session();
   }, [])
-  console.log(props)
   return (
     <div className="">
       <Banner info={banner} />

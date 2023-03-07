@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default (req, res) => {
     if (req.method === 'POST') {
-        console.log(req.body)
         if(!req.body.data) {
             createEntryBlog(req, res)
         } else {

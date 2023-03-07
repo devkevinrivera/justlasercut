@@ -59,8 +59,6 @@ const editMachine = ({ body }, res) => {
                 message: 'Se a actualizado correctamente.'
             });
         } catch (err) {
-            console.log('error-----------')
-            console.log(err)
             res.status(500).json({
                 message: `Error al actualizar el manual.`
             });
@@ -102,7 +100,6 @@ const createMachine = ({ body }, res) => {
 				active: true,
                 ...body
             });
-            console.log(createManualStep)
             session.close();
 
             res.status(200).json({

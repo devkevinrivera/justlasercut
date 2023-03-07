@@ -20,7 +20,6 @@ export default function handler(req, res) {
 
 const mailPedido = (options) => {
 	const { idDelivery , creationDate, session, paymentLink, emailsend } = options.item;
-	console.log(options);
 	return ({ 
 		from: 'justlasercutdev@gmail.com',
 		to: emailsend || 'kevinriveradev@gmail.com',
@@ -142,7 +141,6 @@ const verifyProject = ({ body }, res) => {
             	});
 						})
         } catch (err) {
-					console.log(err)
             res.status(500).json({
                 message: 'CreatedFail!'
             });

@@ -40,7 +40,6 @@ function CreationTagModal() {
 													<Input
 														values={values.titleEs}
 														onChange={(ev) => {
-															console.log(ev.target.value)
 															setFieldValue('titleEs',ev.target.value)
 														}} 
 														placeholder="Titulo de la etiqueta" />

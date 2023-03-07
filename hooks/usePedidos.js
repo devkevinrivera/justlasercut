@@ -26,7 +26,6 @@ export const usePedidos = () => {
 		const { data } = await axios.post(`/api/verification`,{
 			...item
 		});
-		console.log(data)
 	},[]);
 	
 	const completePedido = useCallback(async (id) => {

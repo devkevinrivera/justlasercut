@@ -38,8 +38,6 @@ const CreationMaterialModal = () => {
     const { list } = useMachine();
     const { list : listTerminations, getTermination } = useTermination();
 
-    console.log(list)
-    
     useEffect(async () => {
         getTags();
         getTermination();
@@ -199,7 +197,6 @@ const CreationMaterialModal = () => {
                                                         <Table.Cell>
                                                             <Input type="checkbox" onClick={(ev) => {
                                                                 ev.preventDefault();
-                                                                console.log(item.minutePrice)
                                                                 setMachines([...machines , {
                                                                     ...item,
                                                                     priceMinute: parseInt(item.minutePrice),                                                                }])

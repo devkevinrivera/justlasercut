@@ -38,7 +38,6 @@ const SiteForm = ({ option }) => {
         try {
             const getResult = await axios('/api/banner');
             const filterArrayResult = getResult.data.response
-            console.log(filterArrayResult.filter(entry => entry.languageId === 1)[0]?.title)
             setTitlepage(filterArrayResult.filter(entry => entry.language === 'es')[0]);
             setTitlepageEn(filterArrayResult.filter(entry => entry.language === 'en')[0]);
             setText(filterArrayResult.filter(entry => entry.languageId === 0)[0]?.title);
@@ -102,7 +101,6 @@ const SiteForm = ({ option }) => {
                     id: idToEdit
                 }
             });
-            console.log('Actualizado');
         } catch (error) {
             console.error('Error:', error);
         }

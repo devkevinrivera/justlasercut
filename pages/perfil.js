@@ -29,8 +29,6 @@ const perfil = () => {
         handler();
     }, [session, update]);
 
-    console.log(user);
-
     return (
         <Container style={{ minHeight: '90vh' }}>
             <Header style={{ marginBottom: '4rem' }}>
@@ -135,7 +133,6 @@ const DataPersonal = ({ user }) => {
                 ...data,
                 id: user.id
             })
-            console.log(putDataPersonal)
         } catch (err) {
             console.error(err)
         }
@@ -193,7 +190,6 @@ const Orders = () => {
         const { list : listaPedidos } = list;
 
         const myPedidos = listaPedidos?.filter(pedido => pedido?.session?.user?.email === emailSession);
-        console.log(myPedidos,emailSession,session);
         setOrders(myPedidos)
 
     },[list,session]);
@@ -245,7 +241,6 @@ const MyPedido = ({ item }) => {
             {
                 informacionPedido.items.map(({ copias , file , ...props}) => (
                     <Grid.Row>
-                        {console.log(props)}
                         <Grid.Column computer={3}>
                             <Image src={`${BASE_URL}/${file.previsualization}`} size="large" />
                         </Grid.Column>

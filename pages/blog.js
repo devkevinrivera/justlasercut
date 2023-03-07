@@ -42,9 +42,6 @@ function Blog({ blog }) {
                     </Grid.Column>
                 </Grid.Row>
                 <Divider />
-                {
-                    console.log(blog.blog)
-                }
                 <Grid.Row >
                 {
                     blog.blog.map((entry) => (
@@ -88,7 +85,6 @@ export async function getServerSideProps() {
 
     const { data } = await axios(`${BASE_URL}/api/blog`);
 
-    console.log(data)
     return {
         props: {
             blog: data
