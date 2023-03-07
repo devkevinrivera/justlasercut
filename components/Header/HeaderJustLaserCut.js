@@ -156,35 +156,37 @@ const MenuJust = () => {
         {
             title: t.calcula,
             href: "/",
-            index: true
+            enlace: ''
         },
         {
             title: t.tutoriales,
-            href: "/manual"
+            href: "/manual",
+            enlace: 'manual'
         },
         {
             title: t.materiales,
-            href: "/materiales"
-        },
-        {
-            title: t.plantillas,
-            href: "/plantillas"
+            href: "/materiales",
+            enlace: 'materiales'
         },
         {
             title: t.servicios,
-            href: "/servicios"
+            href: "/servicios",
+            enlace: 'servicios'
         },
         {
             title: t.blog,
-            href: "/blog"
+            href: "/blog",
+            enlace: 'blog'
         },
         {
             title: t.proyectos,
-            href: "/proyectos"
+            href: "/proyectos",
+            enlace: 'proyectos'
         },
         {
             title: t.contacto,
-            href: "/contacto"
+            href: "/contacto",
+            enlace: 'contacto'
         },
     ];
     return (
@@ -193,7 +195,7 @@ const MenuJust = () => {
                 <Menu pointing secondary className="menu-just__container">
                     {
                         navigation.map((page, index) => (
-                                <a href={page.href} key={index} className={pathname.replace('/','') == String(page.title).toLowerCase() || page.index ? 'menu-active-item' : 'mico'}>{page.title}</a>
+                                <a href={page.href} key={index} className={pathname.replace('/','') == String(page.enlace).toLowerCase() || page.index ? 'menu-active-item' : 'mico'}>{page.title}</a>
                         ))
                     }
 
