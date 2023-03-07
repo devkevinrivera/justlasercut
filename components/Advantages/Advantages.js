@@ -1,14 +1,22 @@
 import React from 'react';
 import { Container , Grid, Header, Divider, Image } from 'semantic-ui-react';
+import { useRouter } from 'next/router'
 
-const Advantages = ({ advantages, t }) => {
-    console.log(advantages)
+const languages = {
+    'es': require('../../locale/es/commons.json'),
+    'en': require('../../locale/en/commons.json'),
+};
+
+const Advantages = ({ advantages }) => {
+    const router = useRouter()
+    const { pathname, asPath, query, locale } = router
+    const t = languages[locale];
     return (
         <Container className='advantages'>
             <Grid columns={16}>
                 <Grid.Row>
                     <Grid.Column width="16" className="service__title">
-                        <Header as="h2">Ventajas del corte laser</Header>
+                        <Header as="h2">{t.ventajascortelaser}</Header>
                         <Divider />
                     </Grid.Column>
                 </Grid.Row>

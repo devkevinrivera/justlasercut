@@ -151,7 +151,7 @@ const MenuJust = () => {
     const t = languages[locale];
     const router = useRouter()
     const { pathname, asPath, query } = router
-    console.log('DATA:',pathname.replace('/',''))
+
     const navigation = [
         {
             title: t.calcula,
