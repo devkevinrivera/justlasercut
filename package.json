@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "set NODE_OPTIONS=--openssl-legacy-provider && next dev --port 80 && local-ssl-proxy --source 80 --target 80",
     "build": "set NODE_OPTIONS=--openssl-legacy-provider &&  next build",
-    "start": "set NODE_OPTIONS=--openssl-legacy-provider && next start -port 80 && local-ssl-proxy --source 80 --target 80",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && next start -port 80",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
